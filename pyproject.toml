@@ -1,0 +1,33 @@
+[project]
+name = "coin-collector"
+version = "0.1.0"
+description = "A small pygame coin collector game with pydantic + typer."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "pygame>=2.5",
+  "pydantic>=2.6",
+  "typer>=0.12",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+  "ruff>=0.6",
+]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]
